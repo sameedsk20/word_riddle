@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><img src="images/sklogo.png" class="logo"></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <div class="gameModal">
+            <div class="content">
+                <h2 class="message">You Lost</h2>
+                <p>The right answer was: <b>RAINBOW</b></p>
+                <button class="playAgain" onclick="location.reload()">Play Again!</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hangmanBox">
+                <img src="images/0.jpeg">
+                <h1>Word Riddle</h1>
+            </div>
+            <div class="gameBox">
+                <ul class="wordDisplay"></ul>
+                <h4 class="hintText">
+                    ClueWhisper:
+                    <b></b>
+                </h4>
+                <h4 class="guessesText">
+                    Wrong Attempt:
+                    <b>0 / 4</b>
+                </h4>
+                <div class="keyboard">
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="wordList.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background:linear-gradient(220deg, #296d37,#165848) ;
+}
+.main{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+nav{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul{
+    list-style-type: none;
+}
+.logo{
+    margin-left: 60px;
+    width: 40%;
+    height: 40%;
+}
+.container{
+    width: 850px;
+    background: #faf7f7;
+    display: flex;
+    gap: 70px;
+    align-items: flex-end;
+    padding: 60px 40px;
+    border-radius: 10px;
+}
+.hangmanBox img{
+    max-width: 270px;
+}
+.hangmanBox h1{
+    color: #165848;
+    font-size: 1.7rem;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.gameBox .hintText{
+    font-size: 1.3rem;
+}
+.gameBox .guessesText{
+    font-size: 1.2rem;
+}
+.wordDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+}
+.wordDisplay .letter{
+    width: 28px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #000;
+}
+.wordDisplay .letter.guessed{
+    border-color: transparent;
+    margin: -40px 0 35px;
+}
+.gameBox h4{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.gameBox h4 b{
+    font-weight: 700;
+    font-size: 1.24rem;
+}
+.gameBox .guessesText b{
+    color: #287259;
+}
+.gameBox .keyboard{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+:where(.gameModal, .keyboard) button{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background: #3af45f;
+}
+.keyboard button{
+    padding: 10px;
+    width: calc(100% / 9 - 5px);
+}
+.keyboard button[disabled]{
+    background: #000;
+    pointer-events: none;
+}
+:where(.gameModal, .keyboard) button:hover{
+    background: #04b152a8;
+}
+.gameModal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    transition: 0.5s ease;
+}
+.gameModal.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.gameModal .message{
+    max-width: 130px;
+    font-size: 1.9rem;
+    color: #3af45f;
+}
+.gameModal .content{
+    background: #fff;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+.gameModal h4{
+    font-size: 1.55rem;
+}
+.gameModal p{
+    font-size: 1.2rem;
+    margin: 15px 0 30px;
+    font-weight: 600;
+}
+.gameModal p b{
+    color: #15d33b;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+.gameModal button{
+    padding: 12px 23px;
+}
+.playAgain{
+    transform: scale(1.0);
+    transition: 0.5s ease-in-out;
+}
+.playAgain:hover{
+    transform: scale(1.1);
+    background: linear-gradient(220deg, #165848, #3af45f);
+}
+@media (max-width:782px) {
+    .container{
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+    .hangmanBox img{
+        max-width: 200px;
+    }
+    .hangmanBox h1{
+        display: none;
+    }
+}
